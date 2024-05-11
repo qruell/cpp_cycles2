@@ -7,39 +7,52 @@ int main() {
     int choice;
     double usd_to_uah = 39.58;
     double eur_to_uah = 42.70;
+    double usd_to_eur = 0.93;
 
-    cout << "Currency Converter\n";
-    cout << "1. UAH to USD\n";
-    cout << "2. USD to UAH\n";
-    cout << "3. UAH to EUR\n";
-    cout << "4. EUR to UAH\n";
-    cout << "Enter your choice (1-4): ";
-    cin >> choice;
+        cout << "Currency Converter\n";
+        cout << "1. UAH to USD\n";
+        cout << "2. USD to UAH\n";
+        cout << "3. UAH to EUR\n";
+        cout << "4. EUR to UAH\n";
+        cout << "5. USD to EUR\n";
+        cout << "6. EUR to USD\n";
+        cout << "Enter your choice (1-6): ";
+        cin >> choice;
 
-    switch (choice) {
-    case 1:
-        cout << "Enter amount in UAH: ";
-        cin >> amount;
-        cout << "Equivalent amount in USD: $" << amount / usd_to_uah << endl;
-        break;
-    case 2:
-        cout << "Enter amount in USD: $";
-        cin >> amount;
-        cout << "Equivalent amount in UAH: " << amount * usd_to_uah << " UAH" << endl;
-        break;
-    case 3:
-        cout << "Enter amount in UAH: ";
-        cin >> amount;
-        cout << "Equivalent amount in EUR: ˆ" << amount / eur_to_uah << endl;
-        break;
-    case 4:
-        cout << "Enter amount in EUR: ˆ";
-        cin >> amount;
-        cout << "Equivalent amount in UAH: " << amount * eur_to_uah << " UAH" << endl;
-        break;
-    default:
-        cout << "Invalid choice. Please choose between 1 and 4." << endl;
+        switch (choice) {
+        case 1:
+            cout << "Enter amount in UAH: ";
+            cin >> amount;
+            cout << "Equivalent amount in USD: $" << amount / usd_to_uah << endl;
+            break;
+        case 2:
+            cout << "Enter amount in USD: $";
+            cin >> amount;
+            cout << "Equivalent amount in UAH: " << amount * usd_to_uah << " UAH" << endl;
+            break;
+        case 3:
+            cout << "Enter amount in UAH: ";
+            cin >> amount;
+            cout << "Equivalent amount in EUR: ˆ" << amount / eur_to_uah << endl;
+            break;
+        case 4:
+            cout << "Enter amount in EUR: ˆ";
+            cin >> amount;
+            cout << "Equivalent amount in UAH: " << amount * eur_to_uah << " UAH" << endl;
+            break;
+        case 5:
+            cout << "Enter amount in USD: $";
+            cin >> amount;
+            cout << "Equivalent amount in EUR: ˆ" << amount * usd_to_eur << endl;
+            break;
+        case 6:
+            cout << "Enter amount in EUR: ˆ";
+            cin >> amount;
+            cout << "Equivalent amount in USD: $" << amount / usd_to_eur << endl;
+            break;
+        default:
+            cout << "Invalid choice. Please choose between 1 and 6." << endl;
+        }
+
+        return 0;
     }
-
-    return 0;
-}
