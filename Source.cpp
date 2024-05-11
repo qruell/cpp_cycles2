@@ -1,22 +1,32 @@
 #include <iostream>
-#include <string>
 
 int main() {
-    long long number;
-    std::cout << "Enter an integer: ";
+    int number;
+    std::cout << "Enter any integer: ";
     std::cin >> number;
 
-    std::string numStr = std::to_string(number);
-    std::string resultStr = "";
+    std::cout << "Number after removing digits 3 and 6: ";
 
-    for (char digit : numStr) {
-        if (digit != '3' && digit != '6') {
-            resultStr += digit;
+    int remainingNumber = 0;
+    int multiplier = 1;
+
+    while (number != 0) {
+        int digit = number % 10;
+        if (digit != 3 && digit != 6) {
+            remainingNumber += digit * multiplier;
+            multiplier *= 10;
         }
+        number /= 10;
     }
 
-    long long result = std::stoll(resultStr);
-    std::cout << "Number after removing digits 3 and 6: " << result << std::endl;
+    if (remainingNumber == 0) {
+        std::cout << "0";
+    }
+    else {
+        std::cout << remainingNumber;
+    }
+
+    std::cout << std::endl;
 
     return 0;
 }
